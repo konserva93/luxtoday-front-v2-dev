@@ -1,0 +1,81 @@
+@import 'themes/default';
+
+.wrapper {
+  margin-top: 35px;
+  padding-top: 35px;
+  border-top: 1px solid $color-border;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: $color-text-minor;
+  font-size: 14px;
+
+  @include media('<tablet') {
+    margin-top: 24px;
+    padding-top: 24px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.info {
+  padding-left: 20px;
+  line-height: 24px;
+  li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 7px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include media('<tablet'){
+    padding-left: 0;
+  }
+}
+
+.infoLabel {
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: $color-text-50;
+
+  button {
+    white-space: nowrap;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    span {
+      margin-right: 20px;
+    }
+    button {
+      padding: 0;
+      width: 24px;
+      height: 24px;
+      border: 0;
+      background: none;
+      margin-right: 12px;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  @include media('<tablet') {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    &__links {
+      margin-bottom: 12px;
+    }
+  }
+}

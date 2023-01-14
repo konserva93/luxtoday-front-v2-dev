@@ -1,0 +1,90 @@
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content;}
+  &::-moz-placeholder          {@content;}
+  &:-moz-placeholder           {@content;}
+  &:-ms-input-placeholder      {@content;}
+}
+
+@mixin stretched($offset: 0, $position: absolute){
+    position:$position;
+    left:$offset;
+    right:$offset;
+    top:$offset;
+    bottom:$offset;
+}
+
+@mixin grid-base() {
+  display: flex;
+  flex-wrap: wrap;
+  &__column {
+    box-sizing: border-box;
+  }
+}
+
+@mixin grid-gap($gap) {
+  margin: $gap / -2;
+  &__column {
+    padding: $gap / 2;
+  }
+}
+
+@mixin columns-loop($name, $sizes: (3, 4, 6, 12)) {
+  @each $i in $sizes {
+    &#{$name}_#{$i} {
+      width: 100% / 12 * $i;
+    }
+  }
+}
+
+@mixin hover {
+  @include media('>=desktop-s') {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin spreadMedia($property, $values...) {
+  #{$property}: nth($values, 1);
+  @for $i from 2 through length($values) {
+    @include media('>=' + nth(map-keys($breakpoints), $i - 1)) {
+      #{$property}: nth($values, $i);
+    }
+  }
+}
+
+@mixin scrollbar($width, $color, $background, $withRadius) {
+  cursor: auto;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: $width;
+    border-radius: if($withRadius, $width / 2, 0);
+  }
+  &::-webkit-scrollbar-track {
+    background: $background;
+    border-radius: if($withRadius, $width / 2, 0);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $color;
+    border-radius: if($withRadius, $width / 2, 0);
+  }
+}
+
+@mixin mobileBg($color: white) {
+  @include media('<tablet') {
+    position: relative;
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 200vw;
+      transform: translateX(-50%);
+      background: $color;
+    }
+    & > * {
+      position: relative;
+    }
+  }
+}

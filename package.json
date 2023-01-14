@@ -1,0 +1,59 @@
+{
+  "name": "luxtoday-v2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "watch": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build",
+    "tsm": "typed-scss-modules src --p.~ node_modules/ -n none -L error -w",
+    "dev": "npm-run-all --parallel watch tsm"
+  },
+  "dependencies": {
+    "@next/font": "^13.0.2",
+    "@portabletext/react": "^2.0.0",
+    "@sanity/client": "^3.4.1",
+    "@sanity/image-url": "^1.0.1",
+    "classnames": "^2.3.2",
+    "cookies": "^0.8.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "i18next": "^22.0.4",
+    "include-media": "^1.4.10",
+    "js-cookie": "^3.0.1",
+    "moment": "^2.29.4",
+    "next": "13.0.2",
+    "next-i18next": "^12.1.0",
+    "next-seo": "^5.14.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "^12.0.0",
+    "react-slick": "^0.29.0",
+    "react-spring": "^9.5.5",
+    "sass": "^1.55.0",
+    "svg-sprite-loader": "^6.0.11",
+    "svgo-loader": "^3.0.1",
+    "swr": "^1.3.0"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^12.3.1",
+    "@types/cookies": "^0.7.7",
+    "@types/js-cookie": "^3.0.2",
+    "@types/node": "18.11.7",
+    "@types/react": "18.0.24",
+    "@types/react-dom": "18.0.6",
+    "@types/react-slick": "^0.23.10",
+    "eslint": "8.25.0",
+    "eslint-config-next": "13.0.2",
+    "eslint-config-prettier": "^8.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "typed-scss-modules": "^7.0.1",
+    "typescript": "4.8.4"
+  },
+  "browser": {
+    "cookies": false
+  }
+}

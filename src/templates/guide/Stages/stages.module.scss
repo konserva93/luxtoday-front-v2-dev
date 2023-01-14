@@ -1,0 +1,57 @@
+@import "themes/default";
+
+.item {
+  padding-left: 100px;
+  margin-bottom: 25px;
+  position: relative;
+  &::before, &::after {
+    display: block;
+    position: absolute;
+    content: '';
+    background: rgba($color-text, 0.3);
+  }
+  &::before {
+    width: 2px;
+    border-radius: 1px;
+    left: 49px;
+    top: 40px;
+    bottom: -33px;
+  }
+
+  &::after {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    left: 40px;
+    border: 2px solid $color-body-bg;
+    box-shadow: 0 0 0 2px rgba($color-text, 0.3);
+    top: 14px;
+  }
+
+  &:last-child::before {
+    display: none;
+  }
+
+  @include media('<desktop-s') {
+    padding-left: 60px;
+
+    &::before {
+      left: 19px;
+    }
+    &::after {
+      left: 10px;
+    }
+  }
+
+  @include media('<tablet') {
+    padding-left: 24px;
+
+    &::before {
+      left: 1px;
+    }
+
+    &::after {
+      left: -8px;
+    }
+  }
+}

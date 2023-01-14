@@ -1,0 +1,30 @@
+@import "themes/default";
+
+.h1, .h2 {
+  font-size: 30px;
+  line-height: $font-line-height-narrow;
+  color: $color-text;
+  font-weight: 700;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  white-space: pre-wrap;
+  span {
+    font-size: 24px;
+    color: $color-text-minor;
+    font-weight: 400;
+  }
+
+  b {
+    color: $color-hash;
+  }
+
+  @include media('<desktop-s') {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+.h2 {
+  font-size: 24px;
+}

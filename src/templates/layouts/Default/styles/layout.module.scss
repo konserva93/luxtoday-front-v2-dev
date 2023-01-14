@@ -1,0 +1,101 @@
+@import 'themes/default';
+
+.wrapper {
+  line-height: $font-line-height;
+  margin-right: var(--scroll-width);
+  -webkit-font-smoothing: antialiased;
+  color: $color-text;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent 50%, $color-content-bg 50%);
+  font-weight: 400;
+  // overflow: hidden;
+  font-size: 16px;
+  @include media('<desktop') {
+    background: $color-content-bg;
+  }
+}
+
+.main {
+  margin-left: 340px;
+  min-height: 100vh;
+  background: $color-content-bg;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  @include media('<desktop') {
+    margin-top: 54px;
+    margin-left: 0;
+    min-height: 100vh !important;
+  }
+}
+
+.centered {
+  width: 100%;
+  margin: 0 auto;
+  max-width: map-get($breakpoints, 'desktop-l');
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  color: $color-text-50;
+
+  ul {
+    display: flex;
+  }
+
+  svg {
+    display: block;
+  }
+
+  &__menu {
+    font-size: 16px;
+    a {
+      color: rgba($color-text-minor, 0.5);
+      transition: color $transition-duration;
+      @include hover {
+        color: $color-link-hover;
+      }
+    }
+    li {
+      margin-right: 20px;
+    }
+  }
+
+  &__socials {
+    a {
+      color: $color-text;
+    }
+    li {
+      margin-right: 12px;
+    }
+  }
+
+  @include media('<desktop-l') {
+    margin-top: 60px;
+    &__menu {
+      font-size: 16px;
+    }
+  }
+
+  @include media('<desktop') {
+    flex-wrap: wrap;
+  }
+
+  @include media('<desktop-s') {
+    &__menu {
+      width: 100%;
+      flex-direction: column;
+      margin-bottom: 20px;
+      li {
+        margin: 3px 0;
+      }
+    }
+  }
+  @include media('<tablet') {
+    padding-bottom: 20px;
+  }
+}

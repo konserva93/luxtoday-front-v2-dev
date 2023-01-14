@@ -1,0 +1,103 @@
+@import "themes/default";
+
+.wrapper {
+  margin-bottom: 50px;
+  @include media('<desktop-s') {
+    margin-bottom: 30px;
+  }
+}
+
+.theme {
+  padding: 25px 84px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    padding: 12px;
+    background: #F7F7F5;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-right: 20px;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-right: auto;
+    color: rgba($color-text, 0.7);
+    padding-right: 20px;
+
+    strong {
+      font-size: 24px;
+      font-weight: 700;
+      display: block;
+      color: $color-text;
+    }
+  } 
+
+  @include media('<desktop-s') {
+    padding: 20px;
+  }
+
+  @include media('<tablet') {
+    position: relative;
+    &__title {
+      font-size: 14px;
+      padding-right: 0;
+      strong {
+        font-size: 18px;
+      }
+    }
+    .theme__button.theme__button {
+      position: absolute;
+      padding: 0px 15px;
+      font-size: 14px;
+      bottom: -15px;
+      right: 20px;
+    }
+  }
+
+  @include media('<380px') {
+    flex-direction: column;
+    align-items: flex-start;
+    &__icon {
+      display: none;
+    }
+    .theme__button.theme__button {
+      position: relative;
+      margin: -5px 0 15px 20px;
+    }
+  }
+}
+
+.content {
+  padding: 30px 84px;
+  background: $color-body-bg;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid $color-border;
+  border-top: 0;
+  color: $color-text;
+
+  &_single {
+    border-radius: 10px;
+    border: 1px solid $color-border;
+  }
+
+  @include media('<desktop-s') {
+    padding: 20px;
+    
+  }
+  @include media('<tablet') {
+    padding-top: 35px;
+
+    &__single {
+      padding-top: 20px;
+    }
+  }
+  @include media('<phone') {
+    padding-top: 20px;
+  }
+}

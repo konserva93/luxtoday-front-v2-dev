@@ -1,0 +1,53 @@
+@import 'themes/default';
+
+.textCentered {
+  text-align: center;
+}
+
+.content{
+  padding: 55px 60px;
+  @include media('<desktop-l') {
+    padding: 40px;
+  }
+  @include media('<desktop-s') {
+    padding: 20px;
+  }
+  @include media('<tablet') {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include media('<phone') {
+    padding: 10px;
+  }
+}
+
+%indent-top {
+  margin-top: 40px;
+  @include media('<tablet') {
+    margin-top: 30px;
+  }
+}
+
+%indent-bottom {
+  margin-bottom: 40px;
+  @include media('<tablet') {
+    margin-bottom: 30px;
+  }
+}
+
+.indent {
+  @extend %indent-top;
+  @extend %indent-bottom;
+}
+
+.indentTop {
+  @extend %indent-top;
+}
+
+.indentBottom {
+  @extend %indent-bottom;
+}
+

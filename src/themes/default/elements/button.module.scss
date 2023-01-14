@@ -1,0 +1,73 @@
+@import "themes/default";
+
+.primary {
+  border: 0;
+  background: $color-button;
+  color: $color-button-text;
+  border: 1px solid $color-button;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 9px 16px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: all $transition-duration;
+
+  &[disabled] {
+    color: $color-disabled !important;
+    border-color: $color-disabled !important;
+    background: none !important;
+  }
+
+  .icon {
+    &_right {
+      margin-left: 8px;
+    }
+    &_left {
+      margin-right: 8px;
+    }
+  }
+
+  @include hover {
+    background: transparent;
+    color: $color-button;
+  }
+  @include media('<tablet') {
+    font-size: 16px;
+  }
+
+  &_inverted {
+    background: transparent;
+    color: $color-text;
+    border: 1px solid $color-text;
+    @include hover {
+      color: $color-button;
+      border-color: $color-button;
+    }
+  }
+
+  &_large {
+    padding: 12px 24px;
+    @include media('<tablet') {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+
+  &_small {
+    padding: 4px 12px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  &_narrow {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 14px;
+    .icon_left {
+      margin-left:-14px;
+    }
+  }
+}

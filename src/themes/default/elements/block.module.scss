@@ -1,0 +1,43 @@
+@import 'themes/default';
+
+.primary {
+  background: rgba($color-block-bg, 0.4);
+  padding: 25px;
+  border-radius: 15px;
+  font-weight: 600;
+
+  li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba($color-text-minor, 0.2);
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    font-size: 15px;
+
+    a {
+      color: $color-text;
+      transition: all $transition-duration;
+      @include hover {
+        color: $color-link-hover;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.label {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  color: $color-text-minor;
+  img {
+    margin-right: 5px;
+  }
+}

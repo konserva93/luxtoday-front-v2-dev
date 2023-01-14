@@ -1,0 +1,236 @@
+@import 'themes/default';
+
+.wrapper {
+  float: left;
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 190;
+  @include media('>=desktop') {
+    width: 340px;
+    padding: 32px;
+  }
+}
+
+.logo img {
+  display: block;
+}
+
+.header {
+  padding-top: 28px;
+  display: flex;
+  position: relative;
+  @include media('<desktop') {
+    z-index: 1;
+    background: $color-profile-bg;
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    height: 54px;
+    box-sizing: border-box;
+  }
+  @include media('<desktop-s') {
+    padding: 0 20px;
+  }
+
+  &__contacts {
+    display: none;
+    @include media('<desktop-s') {
+      display: flex;
+      margin-left: auto;
+      li {
+        margin-left: 10px;
+      }
+      svg {
+        display: block;
+      }
+    }
+  }
+}
+
+.search {
+  margin: 32px 0;
+  @include media('<desktop-s') {
+    margin: 20px
+  }
+
+  &__preffix {
+    opacity: 0.5;
+  }
+}
+
+.footer {
+  display: none;
+  @include media('<desktop') {
+    display: block;
+    background: $color-footer-bg;
+    color: $color-text-inverted;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    text-transform: capitalize;
+    svg {
+      margin-right: 10px;
+    }
+    a {
+      color: $color-text-inverted;
+      margin-right: 15px;
+    }
+  }
+}
+
+.content {
+  @include media('>=desktop') {
+    transform: none !important;
+  }
+  @include media('<desktop') {
+    box-sizing: border-box;
+    background: $color-body-bg;
+    width: 100%;
+    max-width: 340px;
+    position: fixed;
+    left: 0;
+    top: 54px;
+    bottom: 0;
+    z-index: 110;
+  }
+}
+
+.logo img{
+  @include media('<desktop') {
+    width: 100px;
+    margin-left: 5px;
+    height: 20px;
+    transform: translateY(2px);
+  }
+}
+
+.activeLocale {
+  padding: 2px 11px;
+  background: $color-text-inverted;
+  color: $color-footer-bg;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+.burger {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  padding: 0;
+  background: none;
+  position: relative;
+  margin-left: -9px;
+
+  @include media('>=desktop') {
+    display: none;
+  }
+
+  hr {
+    display: block;
+    border: 0;
+    margin: 0;
+    border-bottom: 2px solid $color-text;
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    width: 18px;
+    margin-top: -1px;
+    transform-origin: 50%;
+    transition: transform $transition-duration,
+      margin $transition-duration $transition-duration linear, opacity $transition-duration;
+
+    &:nth-child(1) {
+      margin-top: -6px;
+    }
+    &:nth-child(3) {
+      margin-top: 5px;
+    }
+  }
+  &_isOpen hr {
+    transition: transform $transition-duration $transition-duration,
+      margin $transition-duration linear, opacity $transition-duration;
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:nth-child(1) {
+      transform: rotate(45deg);
+      margin-top: 0;
+    }
+    &:nth-child(3) {
+      transform: rotate(-45deg);
+      margin-top: 0;
+    }
+  }
+}
+
+.overlay {
+  @include stretched(0, fixed);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.menu {
+  &__indent {
+    margin-top: 26px;
+  }
+  &__item {
+    padding: 5px 0;
+  }
+  &__link {
+    font-size: 18px;
+    display: flex;
+    color: $color-text-minor;
+    font-weight: 500;
+    transition: color $transition-duration;
+    img {
+      margin-right: 8px;
+    }
+    &_active {
+      color: $color-text;
+      font-weight: 700;
+      span {
+        color: $color-hash;
+      }
+    }
+
+    @include hover {
+      color: $color-link-hover;
+    }
+  }
+  &__sep {
+    margin: 16px 0;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__button {
+    margin: 10px 0;
+  }
+
+  span {
+    padding-right: 5px;
+  }
+
+  @include media('<desktop') {
+    overflow: scroll;
+    box-sizing: border-box;
+    padding: 0 20px 20px 20px;
+    height: calc(100% - 133px);
+  }
+}
+
+.submenu {
+  padding-left: 32px;
+  .menu__item {
+    padding: 8px 0;
+  }
+  .menu__link {
+    font-size: 16px;
+  }
+}

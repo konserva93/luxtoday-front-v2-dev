@@ -1,0 +1,13 @@
+@import 'themes/default';
+
+.hideMobile {
+  @include media('<desktop-s') {
+    display: none;
+  }
+}
+
+.hideDesktop {
+  @include media('>=desktop-s') {
+    display: none;
+  }
+}

@@ -1,0 +1,172 @@
+@import "themes/default";
+
+.window {
+  box-shadow: 0 0 15px 0 #888;
+  border-radius: 5px;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  max-height: 90%;
+  max-width: 340px;
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.25;
+  background: #fff;
+  transition: all 0.2s ease-in;
+  overflow: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+
+  &_settings {
+    max-width: 400px;
+    width: 90%;
+    transition-timing-function: ease-out;
+  }
+
+  @include media('<phone') {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: auto;
+    max-width: none;
+  }
+}
+
+.info {
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.text {
+  margin-bottom: 20px;
+}
+
+.button {
+  box-shadow: none;
+  border: none;
+  appearance: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font: inherit;
+  font-size: 16px;
+  background: transparent;
+  cursor: pointer;
+  &:hover,
+  &:active {
+    background: #eee;
+  }
+
+  &_black {
+    color: #fff;
+    background: #1b1b1b;
+    &:hover,
+    &:active {
+      background: #292929;
+    }
+  }
+}
+
+.button + .button {
+  margin-left: 20px;
+}
+
+.settings {
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__block {
+    border-top: 1px solid #e6e5e5;
+    padding: 15px 0 20px;
+  }
+
+  &__blockTop {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  &__blockText {
+    color: #888;
+  }
+}
+
+.block {
+  padding: 15px 20px;
+}
+
+.back {
+  box-shadow: 0 0 10px 0 #ddd;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #7f7f7f;
+  cursor: pointer;
+  svg {
+    margin-right: 5px;
+    transform: rotate(90deg);
+  }
+  &:hover,
+  &:active {
+    opacity: 0.75;
+  }
+}
+
+.actions {
+  box-shadow: 0 0 10px 0 #ddd;
+}
+
+.state {
+  display: inline-flex;
+  align-items: center;
+  color: #c0c0c0;
+  &_enabled {
+    color: #7b9cf9;
+    .stateButton {
+      background: #41d051;
+      &::before {
+        left: 22px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+  }
+}
+
+.stateButton {
+  position: relative;
+  margin-left: 15px;
+  border-radius: 10px;
+  height: 20px;
+  width: 40px;
+  background: #c6c5c5;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  &::before {
+    content: '';
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    transition: all 0.2s linear;
+  }
+}

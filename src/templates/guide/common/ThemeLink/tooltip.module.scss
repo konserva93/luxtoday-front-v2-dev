@@ -1,0 +1,53 @@
+@import "themes/default";
+
+.wrapper {
+  display: block;
+  position: relative;
+}
+
+.trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  &_click {
+    cursor: pointer;
+  }
+  &_hover {
+    cursor: default;
+  }
+}
+
+.element {
+  position: absolute;
+  z-index: 10;
+  left: 7px;
+  top: -10px;
+  
+  &__text {
+    
+    background: $color-text;
+    color: $color-text-inverted;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 0px 10px;
+    line-height: 22px;
+    display: block;
+    margin-left: 0 !important;
+  }
+  
+  &__arrow {
+    border-top: 5px solid $color-text;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    width: 0;
+    height: 0;
+    top: 20px;
+    position: absolute;
+    left: 26px;
+
+    @include media('<tablet') {
+      left: 20px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import "themes/default";
+
+.wrapper {
+  display: flex;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  height: 48px;
+  align-items: center;
+  background: $color-body-bg;
+  transition: all $transition-duration;
+  box-sizing: border-box;
+  cursor: text;
+
+  svg {
+    display: block;
+  }
+  
+  input { 
+    font-family: var(--primary-font);
+    color: $color-text;
+    height: 100%;
+    padding: 0 15px;
+    border: 0;
+    flex: 1;
+    width: 1px;
+    font-size: 18px;
+    outline: none;
+    min-width: none;
+    background: none;
+    @include placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  &_isFocused {
+    border-color: $color-border-focus !important;
+  }
+}
+
+.preffix {
+  margin-left: 15px;
+}
+
+.suffix {
+  margin-right: 15px;
+}
+
+.button {
+  color: $color-text;
+  transition: all $transition-duration;
+  padding: 0;
+  border: 0;
+  background: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  @include hover {
+    color: $color-link-hover;
+  }
+}

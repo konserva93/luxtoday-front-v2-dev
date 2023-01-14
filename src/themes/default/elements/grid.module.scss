@@ -1,0 +1,102 @@
+@import "themes/default";
+
+.single {
+  .item {
+    margin: 30px 0;
+    @include media('<desktop-s') {
+      margin: 20px 0;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.news {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 30px 25px;
+  border-radius: 15px;
+  background: $color-body-bg;
+  border: 1px solid $color-border;
+
+  @include media('<tablet') {
+    gap: 20px;
+  }
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  .item {
+    margin: 0;
+    height: 100%;
+    &__fullwidth {
+      grid-column: span 2;
+    }
+  }
+  @include media('<desktop-s') {
+    gap: 20px;
+  }
+  @include media('<tablet') {
+    grid-template-columns: 1fr;
+    .item__fullwidth {
+      grid-column: 1;
+    }
+  }
+}
+
+.themes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 40px;
+  @include media('<desktop-s') {
+    column-gap: 10px;
+  }
+  @include media('<tablet') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sticky {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  &__content {
+    width: calc(68% - 30px);
+  }
+  &__sidebar {
+    width: 32%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30px;
+    &_offset {
+      margin-top: 67px;
+    }
+  }
+
+  @include media('<desktop') {
+    &__sidebar {
+      top: 90px;
+    }
+  }
+  @include media('<desktop-s') {
+    flex-direction: column-reverse;
+    &__content {
+      width: 100%;
+    }
+    &__sidebar {
+      position: static;
+      margin-top: 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+:root {
+  --scroll-width: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  
+}
+* {
+  overflow-anchor: none !important;
+  scroll-snap-stop: normal !important;
+  overscroll-behavior: unset !important;
+  scroll-behavior: unset !important;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}

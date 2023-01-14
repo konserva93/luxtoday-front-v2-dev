@@ -1,0 +1,49 @@
+@import 'themes/default';
+
+.wrapper {
+  margin-top: 4px;
+  margin-left: 6px;
+  font-size: 18px;
+  user-select: none;
+  @include media('<desktop') {
+    display: none;
+  }
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 6px;
+  font-weight: 700;
+  .isOpen & {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+  transition: all $transition-duration;
+  @include hover {
+    color: $color-link-hover;
+  }
+  
+}
+
+.content {
+  position: absolute;
+  background: $color-body-bg;
+  width: 50px;
+  box-sizing: border-box;
+  padding: 6px;
+  margin-top: 5px;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  a {
+    color: $color-text;
+    display: block;
+    text-align: center;
+    transition: all $transition-duration;
+    @include hover {
+      color: $color-link-hover;
+    }
+  }
+}

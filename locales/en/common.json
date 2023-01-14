@@ -1,0 +1,58 @@
+{
+  "showMore": "Show more",
+  "today": "Today",
+  "authorsArticle": "Author's article",
+  "mySocials": "Social networks",
+  "copyLink": "Copy link",
+  "copySuccess": "Done",
+  "copyError": "Error",
+  "menu": {
+    "news": "Luxembourg news",
+    "interview": "Interview",
+    "guide": "Relocation Guide"
+  },
+  "readIn": "Read in {{name}}",
+  "share": "Share",
+  "author": "Author",
+  "hero": "Hero",
+  "interviewer": "Interviewer",
+  "readOriginal": "Read full article",
+  "footerMenu": {
+    "about": "About the project",
+    "contact": "Write Us",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "stages": [
+    "The first stage of relocation",
+    "The second stage of relocation",
+    "The third stage of relocation"
+  ],
+  "source": "Sources",
+  "editor": "Editor",
+  "partner": "Affiliate material",
+  "whatIncluded": "What's included",
+  "inDevelopment": "This theme is in progress",
+  "allStages": "All relocation stages",
+  "articles": "Documents",
+  "otherSubjects": "Other themes in this stage",
+  "moreArticles": "More in this theme...",
+  "nextArticle": "Read next article",
+  "updateAt": "Last update",
+  "tableOfContents": "Content",
+  "search": "Search",
+  "searchTitle": "News search by «{{text}}»",
+  "seo": {
+    "locale": "ru_RU",
+    "template": "%s — Luxtoday - online media of Luxembourg",
+    "siteName": "Luxtoday - online media of Luxembourg",
+    "description": "News in Luxembourg and in the world. Current newsbreaks and facts in English",
+    "pages": {
+      "guide": {
+        "title": "Relocation Guide",
+        "description": "Step-by-step instructions a relocation guides in English. For those who is planning to move to Luxembourg."
+      }
+    }
+  },
+  "editorsChoise": "Editor's choice",
+  "fromEditors": "Editorial"
+}

@@ -1,0 +1,49 @@
+@import "themes/default";
+
+.wrapper {
+  border: 1px solid $color-border;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 30px 0;
+  a {
+    color: $color-link;
+    transition: all $transition-duration;
+    @include hover {
+      color: $color-link-hover;
+    }
+  }
+  ol {
+    color: $color-link;
+    margin-left: 20px;
+  }
+  ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-top: 4px;
+  }
+  li {
+    margin-bottom: 4px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @include media('<tablet') {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  @include media('<phone') {
+    border: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  @include media('<tablet') {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}

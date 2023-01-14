@@ -1,0 +1,94 @@
+@import 'themes/default';
+
+.wrapper {
+  color: $color-text;
+  padding: 35px 84px 30px 84px;
+  border-radius: 10px;
+  position: relative;
+
+  @include media('<desktop-s') {
+    padding: 30px 40px;
+  }
+
+  @include media('<tablet') {
+    padding: 20px;
+  }
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-right: 140px;
+  @include media('<tablet') {
+    font-size: 24px;
+    padding-right: 100px;
+  }
+  @include media('<phone') {
+    padding-right: 40px;
+    font-size: 18px;
+  }
+}
+
+.subTitle {
+  opacity: 0.7;
+  @include media('<tablet') {
+    font-size: 14px;
+  }
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  max-width: 410px;
+  padding-right: 140px;
+  @include media('<tablet') {
+    font-size: 14px;
+    padding-right: 100px;
+    margin-bottom: 20px;
+  }
+  @include media('<phone') {
+    padding-right: 0;
+  }
+}
+
+.icon {
+  position: absolute;
+  right: 58px;
+  top: 30px;
+  @include media('<desktop-s') {
+    right: 30px;
+  }
+  @include media('<tablet') {
+    right: 10px;
+    top: 15px;
+    img {
+      width: 100px;
+      height: auto;
+    }
+  }
+  @include media('<phone') {
+    display: none;
+  }
+}
+
+.themes {
+  padding: 30px 84px;
+  @include media('<desktop-s') {
+    padding: 20px 40px;
+  }
+  @include media('<tablet') {
+    padding: 20px 20px;
+  }
+  @include media('<phone') {
+    padding: 20px 0;
+  }
+}
+
+.theme {
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,185 @@
+@import "themes/default";
+
+.highlight {
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 20px 25px;
+  margin: 32px 0;
+
+  
+  &_interviewBlueHighlight {
+    background: $color-highlight-bg;
+  }
+
+  &_interviewYellow, &_guideArticleImportant {
+    background: $color-highlight2-bg;
+  }
+
+  
+
+  &_interviewYellowLamp {
+    background: $color-highlight2-bg;
+    position: relative;
+    padding-left: 104px;
+    &::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 56px;
+      position: absolute;
+      left: 24px;
+      border-radius: 100%;
+      background: $color-body-bg url(/images/icons/lamp.png) 50% 50% no-repeat;
+      background-size: 24px 24px;
+      top: 50%;
+      margin-top: -28px;
+      min-height: 56px;
+    }
+    &::before {
+      background: $color-highlight2-bg;
+    }
+  }
+  @include media('<desktop-s') {
+    font-size: 15px;
+    margin: 20px 0;
+  }
+  @include media('<tablet') {
+    padding: 20px;
+    &_interviewYellowLamp {
+      padding-top: 96px;
+      &::after {
+        margin-left: -28px;
+        left: 50%;
+        top: 48px;
+      }
+    }
+  }
+
+  &_guideArticleImportant {
+    &::before {
+      display: none;
+    }
+    @include media('<tablet') {
+      padding: 20px;
+    }
+  }
+}
+
+.quote {
+  font-style: italic;
+  font-size: 18px;
+  margin: 28px 0;
+  position: relative;
+
+  &__icon {
+    display: inline-block;
+    &:first-of-type {
+      float: left;
+      margin-right: 10px;
+      transform: translateY(2px) rotate(180deg);
+    }
+    &:last-of-type  {
+      transform: translateY(4px);
+      margin-left: 10px;
+    }
+  }
+  p:last-of-type {
+    display: inline;
+  }
+  &__link {
+    margin-top: 10px;
+    a {
+      color: rgba($color-text, 0.5);
+      font-style: italic;
+      transition: all $transition-duration;
+      @include hover {
+        color: $color-link-hover;
+      }
+    }
+  }
+  &_interviewWhiteQuote {
+    border: 1px solid $color-border;
+    border-radius: 13px;
+    padding: 32px;
+    @include media('<tablet') {
+      padding: 20px;
+      font-size: 16px;
+    }
+  }
+  &_interviewBlueQuote,  &_guideArticleBlueQuote {
+    background: $color-highlight-bg;
+    border-radius: 0px 20px 20px 0px;
+    border-left: 8px solid $color-border;
+    padding: 12px 32px;
+  }
+  &_interviewBlueQuote {
+    @include media('<tablet') {
+      border: 0;
+      padding-left: 30px;
+      padding-right: 0;
+      
+      & .quote__icon:first-child {
+        position: absolute;
+        left: 0;
+      }
+    }
+    @include mobileBg($color-highlight-bg);
+  }
+  &_guideArticleBlueQuote {
+    @include media('<tablet') {
+      padding-left: 20px;
+      font-size: 16px;
+    }
+  }
+  &_guideArticleQuoteWithLink {
+    font-style: italic;
+    border-left: 5px solid $color-border;
+    margin-left: 40px;
+    padding-left: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    svg {
+      display: none;
+    }
+    @include media('<tablet') {
+      padding-left: 20px;
+      font-size: 16px;
+    }
+  }
+
+  @include media('<desktop-s') {
+    margin: 20px 0;
+  }
+}
+
+.image.image {
+  margin: 28px 0;
+  padding: 0;
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  clear: left;
+
+  img {
+    width: 100%;
+  }
+
+  &_left {
+    max-width: 420px;
+    float: left;
+    width: 50%;
+    margin-right: 40px;
+  }
+  @include media('<desktop-s') {
+    margin: 20px 20px 20px 0;
+  }
+  @include media('<tablet') {
+    &_left {
+      width: 100%;
+      float: none;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

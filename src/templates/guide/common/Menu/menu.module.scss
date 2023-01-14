@@ -1,0 +1,39 @@
+@import "themes/default";
+
+.list {
+  margin-top: 25px;
+
+  li {
+    margin: 0 -42px;
+    padding: 15px 42px;
+    border-top: 1px solid #EFEFEF;
+
+    a {
+      font-size: 18px;
+      color: $color-link;
+      transition: all $transition-duration;
+      font-weight: 600;
+      @include hover {
+        color: $color-link-hover;
+      }
+    }
+  }
+
+  @include media('<desktop-s') {
+    li {
+      margin: 0 -20px;
+      padding: 15px 20px;
+    }
+  }
+
+  @include media('<tablet') {
+    margin-top: 15px;
+    li {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      a {
+        font-size: 15px;
+      }
+    }
+  }
+}

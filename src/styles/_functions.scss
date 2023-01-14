@@ -1,0 +1,15 @@
+@function if($condition, $if-value, $else-value) {
+  @if ($condition) {
+      @return $if-value;
+  } @else {
+      @return $else-value;
+  }
+}
+
+@function reverse($list) {
+  $reversedList: ();
+  @each $item in $list {
+    $reversedList: append($reversedList, if($item, -$item, null))
+  }
+  @return $reversedList;
+}
